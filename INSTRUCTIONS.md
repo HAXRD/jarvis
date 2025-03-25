@@ -91,11 +91,15 @@ The platform consists of a frontend webpage and a backend server.
 │   ├── docker/
 │   │   ├── frontend.Dockerfile
 │   │   ├── tornado.Dockerfile
-│   │   └── flask.Dockerfile
+│   │   ├── flask.Dockerfile
+│   │   ├── postgres.Dockerfile
+│   │   └── postgres/
+│   │       └── init.sql
 │   ├── kubernetes/
 │   │   ├── frontend.yaml
 │   │   ├── tornado.yaml
-│   │   └── flask.yaml
+│   │   ├── flask.yaml
+│   │   └── postgres.yaml         # Kubernetes configuration for PostgreSQL
 │   └── nginx/
 │       └── nginx.conf
 │
