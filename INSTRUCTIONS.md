@@ -71,21 +71,24 @@ The platform consists of a frontend webpage and a backend server.
 │   └── styles/                  # Global styles
 │
 ├── backend/                      # Backend services
-│   ├── tornado_server/          # WebSocket server
-│   │   ├── handlers/           
-│   │   ├── services/
-│   │   └── main.py
+│   ├── tornado_server/          # WebSocket server for real-time LLM interactions
+│   │   ├── handlers/            # WebSocket and HTTP handlers
+│   │   ├── services/            # Business logic services
+│   │   ├── utils/               # Utility functions
+│   │   ├── main.py              # Main application entry point
+│   │   └── config.py            # Configuration settings
 │   │
-│   ├── flask_server/           # REST API server
-│   │   ├── routes/
-│   │   ├── models/
-│   │   ├── services/
-│   │   └── app.py
+│   ├── flask_server/            # REST API server for user & data management
+│   │   ├── routes/              # API routes/blueprints
+│   │   ├── models/              # Database models
+│   │   ├── services/            # Business logic services
+│   │   ├── utils/               # Utility functions
+│   │   ├── middlewares/         # Custom middlewares
+│   │   ├── app.py               # Main application entry point
+│   │   ├── config.py            # Configuration settings
+│   │   └── extensions.py        # Flask extensions initialization
 │   │
-│   └── shared/                 # Shared utilities between services
-│       ├── config/
-│       ├── database/
-│       └── utils/
+│   └── requirements.txt         # Python dependencies for both servers
 │
 ├── deployment/                  # Deployment configurations
 │   ├── docker/
@@ -99,7 +102,7 @@ The platform consists of a frontend webpage and a backend server.
 │   │   ├── frontend.yaml
 │   │   ├── tornado.yaml
 │   │   ├── flask.yaml
-│   │   └── postgres.yaml         # Kubernetes configuration for PostgreSQL
+│   │   └── postgres.yaml       # Kubernetes configuration for PostgreSQL
 │   └── nginx/
 │       └── nginx.conf
 │
